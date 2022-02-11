@@ -10,7 +10,6 @@ npm i autoprefixer postcss-pxtorem sass -D
 vite-plugin-style-import vant 的 css
 vite-plugin-html html 模板
 
-
 #---------------------
 关于 vscode prettier 插件和项目的 prettier 依赖的问题。
 vscode 的插件，读取配置优先级为.prettierrc > workspace settings.json>user settings.json 注意文件得 format 设置,配置了.prettierrc 就不需要 workspace settings.json 中配置了
@@ -20,15 +19,14 @@ vscode 的插件，读取配置优先级为.prettierrc > workspace settings.json
 npm i prettier -D
 
 #------------------
- 关于eslint配置
- eslint   eslint本身核心
- eslint-plugin-vue  vue官方eslint插件
- @typescript-eslint/eslint-plugin  typescript的插件
- @typescript-eslint/parser        typescript对应解析器
- vite-plugin-eslint  vite运行时的eslint检查插件，需要在vite.
- 
- 还需要在.eslintrc.js中做细化规则配置   参考:https://juejin.cn/post/7002869322737516581#heading-1
+关于 eslint 配置
+eslint eslint 本身核心
+eslint-plugin-vue vue 官方 eslint 插件
+@typescript-eslint/eslint-plugin typescript 的插件
+@typescript-eslint/parser typescript 对应解析器
+vite-plugin-eslint vite 运行时的 eslint 检查插件，需要在 vite.
 
+还需要在.eslintrc.js 中做细化规则配置 参考:https://juejin.cn/post/7002869322737516581#heading-1
 
 rfc 222 是 script set 与 ref sugar
 

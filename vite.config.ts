@@ -97,7 +97,7 @@ export default ({ mode }) => {
     build: {
       target: ["chrome63", "ios11", "es2015"],
       cssTarget: ["chrome63", "ios11", "es2015"],
-      outDir: "groupweb",
+      outDir: "dist",
       rollupOptions: {
         output: {
           chunkFileNames: "static/js/[name]-[hash].js", //分离文件https://github.com/vitejs/vite/issues/3815
