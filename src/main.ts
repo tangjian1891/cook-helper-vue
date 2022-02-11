@@ -1,4 +1,6 @@
 import { createApp } from "vue";
 import App from "./App.vue";
 console.log("ok");
-createApp(App).mount("#app");
+console.log("start")
+let qwer=23
+  createApp(App).mount("#app");
