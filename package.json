@@ -39,9 +39,7 @@
     "vite-plugin-style-import": "^2.0.0",
     "vue-tsc": "^0.29.8"
   },
-  "gitHooks": {
-    "pre-commit": "313e1e1"
-  },
+
   "lint-staged": {
     "{src/**/*.{js,vue,ts},index.html}": [
       "eslint --fix",
