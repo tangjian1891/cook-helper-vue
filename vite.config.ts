@@ -6,7 +6,7 @@ import autoprefixer from "autoprefixer";
 import pxtorem from "postcss-pxtorem";
 import eslintPlugin from "vite-plugin-eslint";
 //import legacy from "@vitejs/plugin-legacy";
-import {createHtmlPlugin } from "vite-plugin-html";
+import { createHtmlPlugin } from "vite-plugin-html";
 // https://vitejs.dev/config/
 export default ({ mode }) => {
   console.log("mode:" + mode);
@@ -41,7 +41,7 @@ export default ({ mode }) => {
         "/esapp": {
           target: url,
           changeOrigin: true,
-          rewrite: (path) => path.replace("^/esapp", "esapp"),
+          rewrite: path => path.replace("^/esapp", "esapp"),
         },
       },
     },
@@ -69,7 +69,6 @@ export default ({ mode }) => {
         },
         minify: true,
       }),
-   
     ],
     css: {
       postcss: {
@@ -85,7 +84,7 @@ export default ({ mode }) => {
             //取消打包报错 warning: "@charset" must be the first rule in the file
             postcssPlugin: "internal:charset-removal",
             AtRule: {
-              charset: (atRule) => {
+              charset: atRule => {
                 if (atRule.name === "charset") {
                   atRule.remove();
                 }

@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "esnext",
-    "baseUrl":"./",
+    "baseUrl": "./",
     "useDefineForClassFields": true,
     "module": "esnext",
     "moduleResolution": "node",
@@ -11,11 +11,11 @@
     "sourceMap": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
-    "useUnknownInCatchVariables":false,
+    "useUnknownInCatchVariables": false,
     "lib": ["esnext", "dom"],
-    "paths":{
+    "paths": {
       "@": ["src"],
-      "@/*": ["src/*"],
+      "@/*": ["src/*"]
     }
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
