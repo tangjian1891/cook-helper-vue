@@ -1,14 +1,17 @@
 # Vue 3 + Typescript + Vite
 
 This template should help get you started developing with Vue 3 and Typescript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+ 
 
-## Recommended IDE Setup
+npm i axios fastclick mitt pinia ua-parser-js@1.0.2 vant vue-router
 
-- [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar)
+npm i autoprefixer postcss-pxtorem sass -D
 
-## Type Support For `.vue` Imports in TS
+额外插件
+vite-plugin-style-import  vant的css
+vite-plugin-html      html模板
+vite-plugin-eslint    动态检测eslint显示
 
-Since TypeScript cannot handle type information for `.vue` imports, they are shimmed to be a generic Vue component type by default. In most cases this is fine if you don't really care about component prop types outside of templates. However, if you wish to get actual prop types in `.vue` imports (for example to get props validation when using manual `h(...)` calls), you can enable Volar's `.vue` type support plugin by running `Volar: Switch TS Plugin on/off` from VSCode command palette.
 
 
 rfc 222 是script set与ref sugar
