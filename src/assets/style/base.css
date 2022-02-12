@@ -1,0 +1,183 @@
+.hide {
+  display: none;
+}
+/* 已经存在的公共类
+
+  .touch_active  点击active效果
+  .handle   click事件上需要加小手
+  .rotate_180  图标旋转180度，使用相关的图标
+  .expand_area   扩大可触碰区域 默认6px
+  .expand_area_8   扩大可触碰区域 8px
+
+*/
+
+/* 业务公共css全部放这里 */
+/* @font-face {
+  font-family: "numberFont";
+  src: url("../font/D-DIN-Bold.ttf");
+  font-weight: normal;
+  font-style: normal;
+} */
+
+html {
+  height: 100%;
+  width: 100%;
+  background-color: #fff;
+}
+body {
+  height: 100%;
+  /* 因为rem的最大为50px 。所以想要目标版心为768,实际max-width为584左右比较合适 */
+  max-width: 584px;
+  width: 100%;
+  margin: 0 auto !important;
+  background: #fff;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  font-size: 16px;
+}
+#app {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  overflow: hidden;
+}
+.Router {
+  background: #fff;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+/* 如果使用了page这个类。那么默认就flex布局，纵向了,参考layout-p页面 */
+.page {
+  font-size: 16px;
+  flex-direction: column;
+  display: flex;
+  height: 100%;
+  overflow: hidden;
+}
+.content {
+  flex: 1;
+  overflow-y: auto;
+  z-index: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+::-webkit-scrollbar {
+  display: none;
+  width: 0px;
+  height: 0px;
+}
+
+/* 滚动 .按说应该在content 上都加的，暂时不加*/
+.scroll {
+  -webkit-overflow-scrolling: touch;
+  overflow: auto;
+}
+
+/* 小手 */
+.handle {
+  cursor: pointer;
+}
+
+/* 旋转。适合做箭头图标相反方向 */
+.rotate_180 {
+  transform: rotate(180deg);
+  transform-origin: center;
+}
+
+/*清除浮动*/
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* 移动端点击 active效果 公共css start */
+.touch_active {
+  position: relative;
+}
+.touch_active::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  border: inherit;
+  border-color: #000;
+  border-radius: inherit;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #000;
+  opacity: 0;
+}
+.touch_active:active::before {
+  opacity: 0.1;
+}
+
+/* 移动端点击 active效果 end */
+
+/* svg字体图标公共样式 */
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+
+/* 扩大点击区域  ,对svg 16*16可以扩大*/
+.expand_area {
+  padding: 6px;
+  /*扩大可触碰区域的元素，盒模型为标准盒模型 */
+  box-sizing: content-box;
+}
+.expand_area_row_1 {
+  padding: 1px;
+  /*扩大可触碰区域的元素，盒模型为标准盒模型 */
+  box-sizing: content-box;
+}
+/* 因为设计图间距不统一问题，在小的图片上可能需要额外扩大点击区域 */
+.expand_area_8 {
+  padding: 8px;
+  box-sizing: content-box;
+}
+
+/* vant的1px在不引入任何组件的情况下，无法使用 ,所以单独定义一下1px下边框*/
+.van-hairline--bottom,
+.van-hairline--top {
+  position: relative;
+}
+.van-hairline--bottom::after {
+  border-bottom-width: 1px !important;
+}
+.van-hairline--top::after {
+  border-top-width: 1px !important;
+}
+[class*="van-hairline"]::after {
+  position: absolute;
+  box-sizing: border-box;
+  content: " ";
+  pointer-events: none;
+  top: -50%;
+  right: -50%;
+  bottom: -50%;
+  left: -50%;
+  border: 0 solid #e4e4e4;
+  -webkit-transform: scale(0.5);
+  transform: scale(0.5);
+}
+/* 自定义骨架屏样式 */
+.skeleton_animate {
+  animation: skeleton 1.2s ease-in-out infinite;
+}
+
+@keyframes skeleton {
+  50% {
+    opacity: 0.6;
+  }
+}

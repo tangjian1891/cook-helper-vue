@@ -70,6 +70,9 @@ export default ({ mode }) => {
         minify: true,
       }),
     ],
+    resolve: {
+      alias: [{ find: "@", replacement: "/src" }],
+    },
     css: {
       postcss: {
         plugins: [

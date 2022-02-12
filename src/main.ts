@@ -1,9 +1,9 @@
 import { createApp } from "vue";
 import App from "./App.vue";
-console.log("ok");
-
-
-const qwer = 23;
-  createApp(App).mount("#app")
-
-console.log(33);
+import { router } from "./router";
+import "./utils/init/index";
+import "./assets/style/base.css";
+import BaseSvg from "./components/base-svg/base-svg.vue";
+const app = createApp(App).use(router);
+app.component("BaseSvg", BaseSvg);
+app.mount("#app");
