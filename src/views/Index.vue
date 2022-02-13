@@ -12,8 +12,8 @@
   <div class="cook_recommend">
     <div class="cook_recommend_item" v-for="item in 10">
       <img src="../assets/images/hongshaorou.jpg" alt="" />
-      <p class="cook_name">红烧肉</p>
-      <div class="cook_relation"><span>3万浏览</span><span>4211收藏</span></div>
+            <p class="cook_name">红烧肉</p>
+      <div class="cook_relation"><span>3万浏览</span><span>42211收藏</span></div>
     </div>
   </div>
 </template>
