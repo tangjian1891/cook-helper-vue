@@ -2,7 +2,7 @@
   <!-- 搜索 -->
   <!-- 分类区域 -->
   <div class="cook_cate">
-    <div class="cook_cate_item" v-for="item in cateData" :key="item.id">
+    <div v-for="item in cateData" :key="item.id" class="cook_cate_item">
       <BaseSvg size="16" name="icon-chaocai-"></BaseSvg>
       <span>{{ item.name }}</span>
     </div>
@@ -10,10 +10,10 @@
   <!-- 好菜推荐 -->
   <h3>好菜推荐</h3>
   <div class="cook_recommend">
-    <div class="cook_recommend_item" v-for="item in 10">
+    <div v-for="item in 10" :key="item" class="cook_recommend_item">
       <img src="../assets/images/hongshaorou.jpg" alt="" />
-            <p class="cook_name">红烧肉</p>
-      <div class="cook_relation"><span>3万浏览</span><span>42211收藏</span></div>
+      <p class="cook_name">红烧肉</p>
+      <div class="cook_relation"><span>32万浏览</span><span>42211收藏</span></div>
     </div>
   </div>
 </template>
