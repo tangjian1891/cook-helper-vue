@@ -12,6 +12,16 @@ const router = createRouter({
       name: "index",
       component: () => import("@/views/Index.vue"),
     },
+    {
+      path: "/season",
+      name: "season",
+      component: () => import("@/views/season.vue"),
+    },
+    {
+      path: "/season-detail",
+      name: "season-detail",
+      component: () => import("@/views/season-detail.vue"),
+    },
   ],
 });
 

@@ -1,8 +1,8 @@
 <template>
-  <Tabbar v-model="active">
-    <TabbarItem icon="home-o">首页</TabbarItem>
-    <TabbarItem icon="search">科普</TabbarItem>
-    <TabbarItem icon="friends-o">我的</TabbarItem>
+  <Tabbar v-model="active" :route="true">
+    <TabbarItem :to="{ name: 'index' }" icon="home-o">首页</TabbarItem>
+    <TabbarItem :to="{ name: 'season' }" icon="search">时令时蔬</TabbarItem>
+    <TabbarItem :to="{ name: 'profile' }" icon="friends-o">我的</TabbarItem>
   </Tabbar>
 </template>
 <script lang="ts" setup>
