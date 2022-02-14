@@ -70,6 +70,9 @@ export default ({ mode }) => {
         minify: true,
       }),
     ],
+    resolve: {
+      alias: [{ find: "@", replacement: "/src" }],
+    },
     css: {
       postcss: {
         plugins: [
@@ -78,19 +81,19 @@ export default ({ mode }) => {
             rootValue: 37.5,
             propList: ["*"],
             minPixelValue: 1.1,
-            exclude: "node_modules/element-plus|src/multiplePage",
+            // exclude: "node_modules/element-plus|src/multiplePage",
           }),
-          {
-            //取消打包报错 warning: "@charset" must be the first rule in the file
-            postcssPlugin: "internal:charset-removal",
-            AtRule: {
-              charset: atRule => {
-                if (atRule.name === "charset") {
-                  atRule.remove();
-                }
-              },
-            },
-          },
+          // {
+          //   //取消打包报错 warning: "@charset" must be the first rule in the file
+          //   postcssPlugin: "internal:charset-removal",
+          //   AtRule: {
+          //     charset: atRule => {
+          //       if (atRule.name === "charset") {
+          //         atRule.remove();
+          //       }
+          //     },
+          //   },
+          // },
         ],
       },
     },

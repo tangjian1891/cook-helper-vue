@@ -1,34 +1,37 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { computed, reactive, ref, watch } from "vue";
 
 defineProps<{ msg: string }>();
 
 const count = ref(0);
+
+const obj = reactive({ count: { a: 2 } });
+
+watch(
+  () => obj,
+  (newValue, oldValue) => {
+    // fires on nested property mutations
+    // Note: `newValue` will be equal to `oldValue` here
+    // because they both point to the same object!
+    console.log("变化了啊", newValue, oldValue);
+  },
+  { deep: true },
+);
+// watch(obj, (newValue, oldValue) => {
+//   // fires on nested property mutations
+//   // Note: `newValue` will be equal to `oldValue` here
+//   // because they both point to the same object!
+//   console.log('变化了啊',newValue,oldValue);
+// });
+
+setInterval(() => {
+  obj.count.a++;
+}, 1000);
 </script>
 
 <template>
   <h1>{{ msg }}</h1>
-
-  <p>
-    Recommended IDE setup:
-    <a href="https://code.visualstudio.com/" target="_blank">VSCode</a>
-    +
-    <a href="https://github.com/johnsoncodehk/volar" target="_blank">Volar</a>
-  </p>
-
-  <p>See <code>README.md</code> for more information.</p>
-
-  <p>
-    <a href="https://vitejs.dev/guide/features.html" target="_blank"> Vite Docs </a>
-    |
-    <a href="https://v3.vuejs.org/" target="_blank">Vue 3 Docs</a>
-  </p>
-
-  <button type="button" @click="count++">count is: {{ count }}</button>
-  <p>
-    Edit
-    <code>components/HelloWorld.vue</code> to test hot module replacement.
-  </p>
+  <h1>{{ count }}</h1>
 </template>
 
 <style scoped>
