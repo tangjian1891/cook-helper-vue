@@ -5,16 +5,17 @@
       <Search v-model="searchValue" placeholder="请输入搜索关键词" />
     </div>
     <div class="content">
+      <!-- 左侧标签栏-->
       <Sidebar v-model="active">
         <SidebarItem v-for="item in 12" :title="item + '月'" />
       </Sidebar>
+      <!-- 标签内容 -->
       <div class="sidebar_right">
         <div v-for="(item, index) in rightData" :key="index">
-          <SingleFoodItem :data="item" :month="index + 1" />
+          <SingleFoodItem v-if="active == index + ''" :data="item" :month="index + 1" />
         </div>
       </div>
     </div>
-
     <BaseFooter />
   </div>
 </template>
@@ -26,7 +27,7 @@ import { Search } from "vant";
 import { Sidebar, SidebarItem } from "vant";
 const searchValue = ref("");
 
-const active = ref("");
+const active = ref("0");
 
 const rightData = reactive([
   {
@@ -78,5 +79,6 @@ const rightData = reactive([
   display: flex;
 }
 .sidebar_right {
+  overflow: auto;
 }
 </style>
