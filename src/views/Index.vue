@@ -43,3 +43,5 @@ const cateData = reactive([
   { name: "全部分类", id: "8" },
 ]);
 </script>
+
+<style lang="scss"></style>

@@ -10,7 +10,7 @@
       </Sidebar>
       <div class="sidebar_right">
         <div v-for="(item, index) in rightData" :key="index">
-          <SingleGroup :data="item" :month="index + 1" />
+          <SingleFoodItem :data="item" :month="index + 1" />
         </div>
       </div>
     </div>
@@ -21,7 +21,7 @@
 <script lang="ts" setup>
 import { reactive, ref } from "vue";
 import BaseFooter from "../components/base-footer/base-footer.vue";
-import SingleGroup from "../components/single-group/single-group.vue";
+import SingleFoodItem from "../components/single-food-item/single-food-item.vue";
 import { Search } from "vant";
 import { Sidebar, SidebarItem } from "vant";
 const searchValue = ref("");
@@ -29,6 +29,41 @@ const searchValue = ref("");
 const active = ref("");
 
 const rightData = reactive([
+  {
+    fruits: ["甘蔗", "柠檬", "橙子", "青枣"],
+    vegetable: ["白菜", "春笋", "胡萝卜", "韭菜", "小白菜", "蒜黄", "香菇", "豆瓣菜"],
+    nut: ["腰果"],
+  },
+  {
+    fruits: ["甘蔗", "柠檬", "橙子", "青枣"],
+    vegetable: ["白菜", "春笋", "胡萝卜", "韭菜", "小白菜", "蒜黄", "香菇", "豆瓣菜"],
+    nut: ["腰果"],
+  },
+  {
+    fruits: ["甘蔗", "柠檬", "橙子", "青枣"],
+    vegetable: ["白菜", "春笋", "胡萝卜", "韭菜", "小白菜", "蒜黄", "香菇", "豆瓣菜"],
+    nut: ["腰果"],
+  },
+  {
+    fruits: ["甘蔗", "柠檬", "橙子", "青枣"],
+    vegetable: ["白菜", "春笋", "胡萝卜", "韭菜", "小白菜", "蒜黄", "香菇", "豆瓣菜"],
+    nut: ["腰果"],
+  },
+  {
+    fruits: ["甘蔗", "柠檬", "橙子", "青枣"],
+    vegetable: ["白菜", "春笋", "胡萝卜", "韭菜", "小白菜", "蒜黄", "香菇", "豆瓣菜"],
+    nut: ["腰果"],
+  },
+  {
+    fruits: ["甘蔗", "柠檬", "橙子", "青枣"],
+    vegetable: ["白菜", "春笋", "胡萝卜", "韭菜", "小白菜", "蒜黄", "香菇", "豆瓣菜"],
+    nut: ["腰果"],
+  },
+  {
+    fruits: ["甘蔗", "柠檬", "橙子", "青枣"],
+    vegetable: ["白菜", "春笋", "胡萝卜", "韭菜", "小白菜", "蒜黄", "香菇", "豆瓣菜"],
+    nut: ["腰果"],
+  },
   {
     fruits: ["甘蔗", "柠檬", "橙子", "青枣"],
     vegetable: ["白菜", "春笋", "胡萝卜", "韭菜", "小白菜", "蒜黄", "香菇", "豆瓣菜"],
